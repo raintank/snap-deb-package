@@ -1,0 +1,21 @@
+machine:
+  environment:
+    GOPATH: "/home/ubuntu/go"
+checkout:
+  post:
+    - go get github.com/intelsdi-x/snap
+dependencies:
+  override:
+    - bundle install
+general:
+  artifacts:
+    - deb/
+test:
+  post:
+    - ./build.sh
+    - ./package.sh
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./deploy.sh
