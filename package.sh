@@ -22,6 +22,6 @@ mkdir -p ${BUILD}/var/lib/snap/plugins
 
 cp ${BASE}/etc/snap.yaml ${BUILD}/etc/snap/
 fpm -s dir -t deb \
-  -v ${VERSION} -n snap -a ${ARCH} --description "Snap Telemetry Framework" \
+  -v ${VERSION} -n snap-agent -a ${ARCH} --description "Snap Telemetry Framework" \
   --deb-upstart ${BASE}/etc/init/snap \
   -C ${BUILD} -p ${PACKAGE_NAME} .
