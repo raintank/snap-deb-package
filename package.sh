@@ -9,7 +9,7 @@ mkdir -p ./deb
 BUILD=$BASE/build
 
 cd $GOPATH/src/github.com/intelsdi-x/snap/
-VERSION=$(git describe --always)
+VERSION=$(git describe --always|sed 's/^v//')
 cd $BASE
 
 ARCH="$(uname -m)"
