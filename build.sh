@@ -6,6 +6,7 @@ BASE=$(readlink -e $SCRIPTDIR)
 
 mkdir -p ${BASE}/build/usr/bin
 cd $GOPATH/src/github.com/intelsdi-x/snap
-./scripts/build.sh $(pwd)
+make deps
+make snap
 cp ./build/bin/* ${BASE}/build/usr/bin/
 
